@@ -5,7 +5,7 @@
 
 /**
  * @fileoverview Ardublockly JavaScript for the Blockly resources and bindings.
- * for blocks that controls flexibit that conneted to board pin 9
+ * for blocks that controls flexibit that connected to board pin 9
  */
 
 goog.require("Blockly.Constants.servo");
@@ -15,18 +15,19 @@ goog.require("Blockly");
 
 Blockly.Blocks["set_servo_angle_speed"] = {
   init: function () {
+    this.appendDummyInput().appendField("Move Cuddlebit (by speed):");
     this.appendValueInput("ANGLE")
       .setCheck(Blockly.Types.NUMBER.checkList)
-      .appendField("Move to angle (0-180):");
+      .appendField("Angle (0-180):");
     this.appendValueInput("SPEED")
       .setCheck(Blockly.Types.NUMBER.checkList)
-      .appendField("with speed (slow 1 - fast 10):");
+      .appendField("Speed (1 = slow, 10 = fast):");
 
     this.setPreviousStatement(true, "Custom");
     this.setNextStatement(true, "Custom");
     this.setColour(120);
     this.setTooltip(
-      "Create a behavior by specifying the target angle and speed of the servo."
+      "Create a behavior by specifying the target angle and movement speed."
     );
     this.setHelpUrl("");
   },
@@ -77,17 +78,18 @@ Blockly.Blocks["set_servo_angle_speed"] = {
 
 Blockly.Blocks["set_servo_angle_time"] = {
   init: function () {
+    this.appendDummyInput().appendField("Move Cuddlebit (by time):");
     this.appendValueInput("ANGLE")
       .setCheck(Blockly.Types.NUMBER.checkList)
-      .appendField("Move to angle (0-180):");
+      .appendField("Angle (0-180):");
     this.appendValueInput("TIME")
       .setCheck(Blockly.Types.NUMBER.checkList)
-      .appendField("within time (in seconds): ");
+      .appendField("Time (seconds): ");
     this.setPreviousStatement(true, "Custom");
     this.setNextStatement(true, "Custom");
     this.setColour(120);
     this.setTooltip(
-      "Create a behavior by specifying the target angle and speed of the servo in seconds."
+      "Create a behavior by specifying the target angle and movement time in seconds."
     );
     this.setHelpUrl("");
   },
@@ -173,19 +175,19 @@ Blockly.Blocks["start_sequence_repeat"] = {
 
 Blockly.Blocks["multi_servo_control"] = {
   init: function () {
-    this.appendDummyInput().appendField("Multi Flexibit Control");
+    this.appendDummyInput().appendField("Multi Cuddlebit Control");
 
     this.appendStatementInput("FB1")
       .setCheck("Behavior")
-      .appendField("Flexibit 1");
+      .appendField("Cuddlebit 1");
 
     this.appendStatementInput("FB2")
       .setCheck("Behavior")
-      .appendField("Flexibit 2");
+      .appendField("Cuddlebit 2");
 
     this.appendStatementInput("FB3")
       .setCheck("Behavior")
-      .appendField("Flexibit 3");
+      .appendField("Cuddlebit 3");
 
     this.setColour(230);
     this.setTooltip(
@@ -194,3 +196,17 @@ Blockly.Blocks["multi_servo_control"] = {
     this.setHelpUrl("");
   },
 };
+
+Blockly.Blocks["single_cuddlebit_control"] = {
+  init: function () {
+    this.appendDummyInput().appendField("Single Cuddlebit Control");
+    this.appendStatementInput("BEHAVIORS")
+        .setCheck("Behavior")
+        .appendField("Cuddlebit Behaviors:");
+    this.setColour(120);
+    this.setTooltip("Control a single Cuddlebit using behaviors.");
+    this.setHelpUrl("");
+  }
+};
+
+

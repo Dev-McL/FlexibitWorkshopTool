@@ -17,23 +17,23 @@ goog.require("Blockly");
 // take the time of EACH breath, angle and number of cycle
 Blockly.Blocks["breathing_preiod_angle_cycle"] = {
   init: function () {
-    this.appendDummyInput().appendField("Preset Behavior: Breathe");
+    this.appendDummyInput().appendField("Breathe");
 
     this.setInputsInline(false);
 
     this.appendDummyInput().appendField(" ");
 
     this.appendValueInput("PERIOD")
-      .appendField("Each breath takes")
+      .appendField("Breath length (seconds):")
       .setCheck(Blockly.Types.NUMBER.checkList)
       .appendField("seconds");
 
     this.appendValueInput("DEGREE")
-      .appendField("shallow (1) ~ deep (180)")
+      .appendField("Breath depth (1 = shallow, 180 = deep):")
       .setCheck(Blockly.Types.NUMBER.checkList);
 
     this.appendValueInput("CYCLES")
-      .appendField("For")
+      .appendField("Repeat how many times:")
       .setCheck(Blockly.Types.NUMBER.checkList)
       .setAlign(Blockly.ALIGN_RIGHT);
     this.appendDummyInput().appendField("times").setAlign(Blockly.ALIGN_RIGHT);
@@ -102,7 +102,7 @@ Blockly.Blocks["breathing_preiod_angle_cycle"] = {
 Blockly.Blocks["breathing_spd_angle_cycle"] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("Preset Behavior: Breathe")
+      .appendField("Breathe")
       .appendField(
         new Blockly.FieldDropdown([
           ["slow", "SLOW"],
@@ -123,7 +123,7 @@ Blockly.Blocks["breathing_spd_angle_cycle"] = {
     this.setInputsInline(false);
 
     this.appendValueInput("CYCLES")
-      .appendField("For")
+      .appendField("Repeat For")
       .setCheck(Blockly.Types.NUMBER.checkList);
     this.setInputsInline(true);
     this.appendDummyInput().appendField("times");
@@ -158,23 +158,23 @@ Blockly.Blocks["breathing_spd_angle_cycle"] = {
 // takes breathing number of cycle, angle, and userinput speed
 Blockly.Blocks["breathing_interval_angle_cycle"] = {
   init: function () {
-    this.appendDummyInput().appendField("Preset Behavior: Breathe");
+    this.appendDummyInput().appendField("Breathe");
 
     this.setInputsInline(false);
 
     this.appendDummyInput().appendField(" ");
 
     this.appendValueInput("INTERVAL")
-      .appendField("Speed [slow (1) ~ fast (10)]: ")
+      .appendField("Speed (1 = slow, 10 = fast): ")
       .setCheck(Blockly.Types.NUMBER.checkList);
 
     this.appendValueInput("DEGREE")
-      .appendField("shallow (1) ~ deep (180)")
+      .appendField("Depth (1 = shallow, 180 = deep):")
       .setCheck(Blockly.Types.NUMBER.checkList);
     // this.setInputsInline(true);
 
     this.appendValueInput("CYCLES")
-      .appendField("For")
+      .appendField("Repeat for")
       .setCheck(Blockly.Types.NUMBER.checkList)
 
       .setAlign(Blockly.ALIGN_RIGHT);
@@ -246,11 +246,11 @@ Blockly.Blocks["breathing_interval_angle_cycle"] = {
 
 Blockly.Blocks["shake"] = {
   init: function () {
-    this.appendDummyInput().appendField("Preset Behavior: Shake");
+    this.appendDummyInput().appendField("Shake");
 
     this.input;
     this.appendValueInput("CYCLES")
-      .appendField("For")
+      .appendField("Repeat how many times:")
       .setCheck(Blockly.Types.NUMBER.checkList)
 
       .setAlign(Blockly.ALIGN_RIGHT);
@@ -284,7 +284,7 @@ Blockly.Blocks["shake"] = {
 Blockly.Blocks["heartbeat"] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("Preset Behavior: Heartbeat")
+      .appendField("Heartbeat")
       .appendField(
         new Blockly.FieldDropdown([
           ["Slow", "Slow"],
@@ -295,7 +295,7 @@ Blockly.Blocks["heartbeat"] = {
     this.setInputsInline(false);
 
     this.appendValueInput("DURATION")
-      .appendField("for")
+      .appendField("Repeat for")
       .setCheck(Blockly.Types.NUMBER.checkList);
     this.setInputsInline(true);
     this.appendDummyInput().appendField("times");
