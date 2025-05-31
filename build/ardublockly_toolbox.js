@@ -100,41 +100,41 @@ Ardublockly.TOOLBOX_XML =
 
     // customization
     '   <category id="Customization" name="Customization">' +
-    '   <block type=\"multi_servo_control\">' +
-    '   </block>' +
-    '   <block type=\"start_sequence_repeat\">' +
-    '      <value name="REPEATS">' +
-    '        <block type="math_number">' +
-    '          <field name="NUM">5</field>' +
-    '        </block>' +
-    '       </value>' +
-    '  </block>' +
-
-    '      <block type="set_servo_angle_speed">' +
-    '       <value name="ANGLE">' +
-    '             <block type="math_number">' +
-    '               <field name="NUM">60</field> ' +
-    '            </block>' +
-    '       </value>' +
-    '       <value name="SPEED">' +
-    '             <block type="math_number">' +
-    '               <field name="NUM">1</field> ' +
-    '            </block>' +
-    '       </value>' +
-    '   </block>' +
-
-    '   <block type="set_servo_angle_time">' +
-    '       <value name="ANGLE">' +
-    '             <block type="math_number">' +
-    '               <field name="NUM">60</field> ' +
-    '            </block>' +
-    '       </value>' +
-    '       <value name="TIME">' +
-    '             <block type="math_number">' +
-    '               <field name="NUM">0.5</field> ' +
-    '            </block>' +
-    '       </value>' +
-    '   </block>'
+'   <block type="multi_servo_control">' +
+'   </block>' +
+'   <block type="start_sequence_repeat">' +
+'      <value name="REPEATS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">5</field>' +
+'        </block>' +
+'       </value>' +
+'  </block>' +
+'   <block type="single_cuddlebit_control">' +
+'   </block>' +
+'   <block type="set_servo_angle_speed">' +
+'       <value name="ANGLE">' +
+'             <block type="math_number">' +
+'               <field name="NUM">60</field> ' +
+'            </block>' +
+'       </value>' +
+'       <value name="SPEED">' +
+'             <block type="math_number">' +
+'               <field name="NUM">1</field> ' +
+'            </block>' +
+'       </value>' +
+'   </block>' +
+'   <block type="set_servo_angle_time">' +
+'       <value name="ANGLE">' +
+'             <block type="math_number">' +
+'               <field name="NUM">60</field> ' +
+'            </block>' +
+'       </value>' +
+'       <value name="TIME">' +
+'             <block type="math_number">' +
+'               <field name="NUM">0.5</field> ' +
+'            </block>' +
+'       </value>' +
+'   </block>'
 
 '</category > ' +
 

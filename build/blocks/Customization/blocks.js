@@ -203,7 +203,7 @@ Blockly.Blocks["single_cuddlebit_control"] = {
     this.appendStatementInput("BEHAVIORS")
         .setCheck("Behavior")
         .appendField("Cuddlebit Behaviors:");
-    this.setColour(120);
+    this.setColour(230);
     this.setTooltip("Control a single Cuddlebit using behaviors.");
     this.setHelpUrl("");
   }
