@@ -284,7 +284,7 @@ Blockly.Arduino['start_sequence_repeat'] = function (block) {
 
 
 
-// wrapper for multiple servo controll
+// wrapper for multiple servo control
 Blockly.Arduino['multi_servo_control'] = function (block) {
   var statements_flexibit1 = Blockly.Arduino.statementToCode(block, 'FB1');
   var statements_flexibit2 = Blockly.Arduino.statementToCode(block, 'FB2');
@@ -313,6 +313,25 @@ Blockly.Arduino['multi_servo_control'] = function (block) {
   return code;
 };
 
+Blockly.Arduino['single_cuddlebit_control'] = function(block) {
+  var statements_behaviors = Blockly.Arduino.statementToCode(block, 'BEHAVIORS');
+
+  Blockly.Arduino.definitions_['setUpServoControlClass'] = setUpServoControlClass;
+  Blockly.Arduino.definitions_['servo_9'] = 'ServoController servo_9;';
+  Blockly.Arduino.setups_['serial_setup'] = 'Serial.begin(9600);';
+  Blockly.Arduino.setups_['setup_servo_9'] = 'servo_9.Attach(9);';
+  
+  // <-- INSERT THE MISSING PIECE HERE:
+  Blockly.Arduino.setups_['setup_servo_9_sequence'] = 'servo_9.StartNewSequence();';
+
+  // Then apply the behaviors (with proper pin replacements if needed)
+  Blockly.Arduino.setups_['servo_9_behavior'] = statements_behaviors.replace(/__SERVO_PIN__/g, '9');
+
+  var code = `
+    servo_9.Update();
+  `;
+  return code;
+};
 
 
 

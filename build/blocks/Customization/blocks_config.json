@@ -40,6 +40,8 @@
         "  </block>" ,
         "  <block type=\"multi_servo_control\">",
         "  </block>",
+        "  <block type=\"single_cuddlebit_control\">",
+        "  </block>",
         "</category>"
     ]
 }
