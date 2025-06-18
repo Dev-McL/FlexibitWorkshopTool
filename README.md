@@ -15,7 +15,7 @@ TODO
 
 ## How to run the program 
 2 ways:
-1. Rendered link: [https://flexibitworkshoptool-28j3.onrender.com/](https://flexibitworkshoptool-28j3.onrender.com/) 
+1. Rendered link: [current render](https://flexibitworkshoptool-70rg.onrender.com/)  [old render](https://flexibitworkshoptool-28j3.onrender.com/) 
 2. If want to run on local machine ( for tests during development)
     1) Clone from with following command
        ```bash
